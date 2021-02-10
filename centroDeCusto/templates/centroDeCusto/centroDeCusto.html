@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Cad. Centro de custo {% endblock %}
+
+{% block content %}
+
+<div>
+	<div class="offset-1 col-9 list-div">
+		<h1>Centro de Custo</h1>
+		<nav class="navbar">
+			<div>
+				<a href="{% url 'centroDeCustoAdd'%}"><button class=" btn btn-primary"> + Centro de Custo</button></a>
+			</div>
+		</nav>	
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Centro de custo</th> 
+				</tr>
+			</thead>
+			<tbody>
+			{% for centroDeCusto in centroDeCusto %}
+				<tr>
+					<td>{{centroDeCusto.centroDeCusto}}</td>
+				<tr>
+			{% endfor %}
+
+			</tbody>
+		</table>
+
+	</div>
+</div>	
+
+
+
+
+
+
+
+
+
+    
+    
+{% endblock%}

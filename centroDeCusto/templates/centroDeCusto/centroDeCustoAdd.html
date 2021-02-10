@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Centro de custo - Add{% endblock %}
+
+
+{%block content %}
+	
+	<div class="offset-1 col-12 list-div">
+		<h1>Adicionar</h1>
+		
+		 <form method="POST" enctype="multipart/form-data" class="form-Add">
+
+            {% csrf_token %}
+
+           
+            <div class="form-row">
+                <div class="form-group col-md-12 mb-0">
+                    {{ form.centroDeCusto|as_crispy_field }}
+                </div>
+            </div>
+            <br>
+            <a href="{% url 'centroDeCusto' %}"<input class="btn btn-primary" value="">Voltar</a> 
+            <input type="submit" class="btn btn-outline-success" value="Salvar">
+    
+        </form>
+	</div>
+    <br>
+	
+{% endblock%}

@@ -1,3 +1,5 @@
+
+/** RODAPÉ  FOOTER BASE **/
 #myFooter {
     background-color: #3c3d41;
     color: white;
@@ -100,31 +102,4 @@
     #myFooter {
         text-align: center;
     }
-}
-
-
-/* CSS utilizado para posicionar o rodapé no final da página. */
-/* Você pode remover isso. */
-
-html{
-    height: 100%;
-}
-
-body{
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    height: 100%;
-}
-
-.content{
-   flex: 1 0 auto;
-   -webkit-flex: 1 0 auto;
-   min-height: 200px;
-}
-
-#myFooter{
-   flex: 0 0 auto;
-   -webkit-flex: 0 0 auto;
 }
