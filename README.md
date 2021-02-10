@@ -1,1 +1,1 @@
-Sistem Financeiro Hex v. 1.0
+Sistema Financeiro Hex v. 1.0
