@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %} Cad. Centro de custo {% endblock %}
+
+{% block content %}
+<div class="card-header card-body-t ">
+<div>
+  <h1>Contas Bancárias</h1>
+    <nav class="navbar">
+      <div>
+        <a href="{% url 'bancoAdd'%}"><button class=" btn btn-primary"> + Conta bancária</button></a>
+      </div>
+    </nav>  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Banco</th> 
+          <th>Agência</th> 
+          <th>C/C</th> 
+          <th></th> 
+        </tr>
+      </thead>
+      <tbody>
+      {% for banco in banco %}
+        <tr>
+          <td>{{banco.banco}}</td>
+          <td>{{banco.ag}}</td>
+          <td>{{banco.cc}}</td>
+          <td class="btn-list">
+          <!-- Botão modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Informções</button>
+          </td>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Informções</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                 <h4>{{banco.banco}}</h4><p><h5> AG: {{banco.ag}} C/C: {{banco.cc}}</h5></p>
+                 <p>Gerente: {{banco.gerente}}</p>
+                 <p>Contato: {{banco.contato}}</p>
+                 <p>Telefone: {{banco.tel}}</p>
+                 <p>Email: {{banco.email}}</p>
+                 <p>Observações: {{banco.obs}}</p> 
+                </div>
+                <div class="modal-footer">
+                   <a href="/bancoEdit/{{banco.id}}"><button type="submit" class="btn btn-outline-warning btn-md">Editar</button></a>
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <tr>  
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+</div>
+{% endblock%}
+
+
+
+

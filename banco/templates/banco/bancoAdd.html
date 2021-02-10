@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Contas a pagar{% endblock %}
+
+
+{%block content %}
+
+<div class="card-header card-body-t ">
+  
+      
+        <h1>Adicionar nova conta bancária</h1>
+        
+        <form method="POST" enctype="multipart/form-data" class="form-Add">
+
+            {% csrf_token %}
+
+           
+            <div class="form-row">
+                <div class="form-group col-md-12 mb-0">
+                    {{ form.banco|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-12 mb-0">
+                {{ form.ag|as_crispy_field }}
+              </div>  
+              <div class="form-group col-md-12 mb-0">
+                {{ form.cc|as_crispy_field }}
+              </div>
+              
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-12 mb-0">
+                {{ form.gerente|as_crispy_field }}
+              </div>  
+              <div class="form-group col-md-12 mb-0">
+                {{ form.email|as_crispy_field }}
+              </div>
+              <div class="form-group col-md-12 mb-0">
+                {{ form.contato|as_crispy_field }}
+              </div>
+              <div class="form-group col-md-12 mb-0">
+                {{ form.tel|as_crispy_field }}
+              </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-12 mb-0">
+                    {{ form.obs|as_crispy_field }}
+
+                </div>
+            </div>
+<br>
+
+
+
+            
+           
+
+
+            <a href="{% url 'banco' %}"<input class="btn btn-primary" value="">Voltar</a>
+            <input type="submit" class="btn btn-outline-success" value="Salvar">
+    
+        </form>
+      </div>
+  <br>
+{% endblock%}
