@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Contas contábeis {% endblock %}
+
+{% block content %}
+<div class="card-header card-body-t ">
+<div>
+  <h1>Plano de contas</h1>  
+    <nav class="navbar">
+      <div>
+        <a href="{% url 'contaAdd'%}"><button class="btn btn-primary btn-add btn-sm"> + Conta</button></a>
+        <a href="{% url 'subconta'%}"><button class="btn btn-primary btn-add btn-sm">Subconta</button></a>
+      </div>
+    </nav>
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Conta</th> 
+         
+        </tr>
+      </thead>
+      <tbody>
+      {% for conta in conta %}
+        <tr>
+          <td>{{conta.conta}}</td>
+        
+      {% endfor %}
+         </tbody>
+    </table>
+{% endblock%}

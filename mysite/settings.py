@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'home',
     'centroDeCusto',
     'banco',
+    'conta',
+    'subconta',
 
     'crispy_forms',
 ]

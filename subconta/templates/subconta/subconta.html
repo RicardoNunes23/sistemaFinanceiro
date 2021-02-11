@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Contas contábeis {% endblock %}
+
+{% block content %}
+<div class="card-header card-body-t ">
+    <h1><i class="fas fa-chart-bar"></i> Plano de contas</h1>
+    <nav class="navbar">
+      <div>
+        <a href="{% url 'subcontaAdd'%}"><button class="btn btn-primary btn-add btn-sm"> + Subconta</button></a>
+    <a href="{% url 'contaAdd'%}"><button class="btn btn-primary btn-add btn-sm"> + Conta</button></a>
+      </div> 
+    </nav>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Conta</th> 
+          <th>Subconta</th> 
+          <th scope="col"></th>        
+        </tr>
+      </thead>
+      <tbody>
+      {% for subconta in subconta %}
+        <tr>
+          <td>{{subconta.conta}}</td>
+          <td>{{subconta.subconta}}</td>
+          <td>
+              <div class="btn-list">
+                <a href="/subcontaEdit/{{subconta.id}}"><button type="submit" class="btn btn-outline-warning btn-sm">Editar</button></a>  
+              </div>  
+            </td>
+        <tr>
+      {% endfor %}
+         </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+  
+
+
+{% endblock%}

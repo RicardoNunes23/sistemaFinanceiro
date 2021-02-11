@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Contas a pagar{% endblock %}
+
+
+{%block content %}
+    <div class="card-header card-body-t ">
+  
+        
+        <h1>Editar plano de contas</h1>
+        
+        <form method="POST" enctype="multipart/form-data" class="form-Add">
+
+            {% csrf_token %}
+
+           
+            <div class="form-row">
+                <div class="form-group col-md-12 mb-0">
+                    {{ form.conta|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12 mb-0">
+                    {{ form.subconta|as_crispy_field }}
+                </div>
+            </div>
+            
+            <br>
+           
+
+
+            <a href="{% url 'subconta' %}"<input class="btn btn-primary" value="">Voltar</a>
+            <input type="submit" class="btn btn-outline-success" value="Salvar">
+    
+        </form>
+        </div>
+    </div>
+{% endblock%}
